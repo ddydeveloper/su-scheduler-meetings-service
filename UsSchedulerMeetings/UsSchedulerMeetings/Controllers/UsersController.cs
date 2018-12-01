@@ -10,17 +10,17 @@ namespace UsSchedulerMeetings.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IParticipantService _participantService;
+        private readonly IMeetingService _meetingService;
 
-        public UsersController(IMeetingService meetingService, IParticipantService participantService)
+        public UsersController(IMeetingService meetingService)
         {
-            _participantService = participantService;
+            _meetingService = meetingService;
         }
 
         [HttpGet("{id}/meetings")]
         public async Task<ActionResult<IEnumerable<Meeting>>> GetMeetings(int id)
         {
-            var participants = await _participantService.GetMeetingParticipantsAsync(id);
+            var participants = await _meetingService.GetUserMeetingsAsync(id);
             return Ok(participants);
         }
     }

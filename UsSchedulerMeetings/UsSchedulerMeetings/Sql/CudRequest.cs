@@ -1,11 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace UsSchedulerMeetings.Sql
+﻿namespace UsSchedulerMeetings.Sql
 {
     public class CudRequest
     {
+        public const string CreateMeeting = @"
+INSERT INTO Meetings ([Name], [Description], [CreatedBy], [StartDate], [StartTime], [DurationMinutes], [Days])
+VALUES (@Name, @Description, @CreatedBy, @StartDate, @StartTime, @DurationMinutes, @Days)
+
+SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public const string CreateParticipant = @"
+INSERT INTO Participants ([UserId], [MeetingId])
+VALUES (@UserId, @MeetingId)
+
+SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public const string UpdateMeeting = @"
+UPDATE Meeting SET
+    Name = @Name,
+    Description = @Desription,
+    StartDate = @StartDate,
+    StartTime = @StartTime,
+    DurationMinutes = @DurationMinutes,
+    Days = @Days
+WHERE Id = @Id";
+
+        public const string DeleteMeeting = @"UPDATE Meeting SET Active = 0 WHERE Id = @Id";
+
+        public const string DeleteParticipant = @"DELETE FROM Participants WHERE Id = @Id";
     }
 }

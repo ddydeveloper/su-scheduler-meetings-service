@@ -21,7 +21,7 @@ namespace UsSchedulerMeetings.Dtos
 
         public DateTime Created { get; set; }
 
-        public int Author { get; set; }
+        public int CreatedBy { get; set; }
 
         public bool Active { get; set; }
     }

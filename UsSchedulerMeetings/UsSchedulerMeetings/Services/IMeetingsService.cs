@@ -6,7 +6,7 @@ namespace UsSchedulerMeetings.Services
 {
     public interface IMeetingService
     {
-        Task<Meeting> GetMeetingAsync(int userId);
+        Task<Meeting> GetMeetingAsync(int id);
 
         Task<IEnumerable<Meeting>> GetUserMeetingsAsync(int userId);
 
