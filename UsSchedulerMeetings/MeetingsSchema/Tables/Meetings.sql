@@ -5,7 +5,7 @@
     [Description] NVARCHAR(500) NULL, 
     [Created] DATETIME NOT NULL DEFAULT (GETDATE()), 
     [CreatedBy] INT NOT NULL, 
-    [StartDate] DATETIME NOT NULL, 
+    [StartDate] DATETIME NULL, 
     [StartTime] NVARCHAR(50) NOT NULL, 
     [DurationMinutes] INT NOT NULL, 
     [Days] NVARCHAR(15) NULL, 
