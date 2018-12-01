@@ -8,5 +8,6 @@
     [StartDate] DATETIME NOT NULL, 
     [StartTime] NVARCHAR(50) NOT NULL, 
     [DurationMinutes] INT NOT NULL, 
-    [Days] NVARCHAR(15) NULL
+    [Days] NVARCHAR(15) NULL, 
+    [Active] BIT NOT NULL DEFAULT(1)
 )
