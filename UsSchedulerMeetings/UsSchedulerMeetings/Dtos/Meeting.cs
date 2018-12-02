@@ -13,13 +13,15 @@ namespace UsSchedulerMeetings.Dtos
 
         public DateTime StartDate { get; set; }
 
-        public List<int> Days { get; set; }
+        public string Days { get; set; }
 
-        public TimeSpan StartTime { get; set; }
+        public short StartTimeMinutes { get; set; }
 
         public int DurationMinutes { get; set; }
 
         public DateTime Created { get; set; }
+
+        public int CompanyId { get; set; }
 
         public int CreatedBy { get; set; }
 

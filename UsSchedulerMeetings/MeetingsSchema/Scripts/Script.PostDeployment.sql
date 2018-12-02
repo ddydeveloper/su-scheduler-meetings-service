@@ -13,18 +13,18 @@ Post-Deployment Script Template
 IF NOT EXISTS (SELECT TOP 1 Id FROM Meetings) 
 BEGIN
 
-	INSERT INTO Meetings([Name], [CreatedBy], [StartDate], [StartTime], [DurationMinutes], [Days])
-			  SELECT N'Samsung customer meeting', 0, DATEFROMPARTS(2018, 12, 10), N'11:00:00', 60, NULL
-	UNION ALL SELECT N'Samsung customer meeting', 0, DATEFROMPARTS(2018, 12, 14), N'14:00:00', 45, NULL
-	UNION ALL SELECT N'Samsung customer meeting', 0, DATEFROMPARTS(2018, 12, 16), N'12:00:00', 60, NULL
-	UNION ALL SELECT N'Samsung customer meeting', 0, DATEFROMPARTS(2018, 12, 20), N'10:15:00', 45, NULL  
-	UNION ALL SELECT N'Samsung team Daily SU', 0, NULL, N'09:45:00', 15, N'1,2,3,4,5'
+	INSERT INTO Meetings([Name], [CreatedBy], [CompanyId], [StartDate], [StartTimeMinutes], [DurationMinutes], [Days])
+			  SELECT N'Samsung customer meeting', 0, 0, DATEFROMPARTS(2018, 12, 10), 660, 60, NULL
+	UNION ALL SELECT N'Samsung customer meeting', 0, 0, DATEFROMPARTS(2018, 12, 14), 840, 45, NULL
+	UNION ALL SELECT N'Samsung customer meeting', 0, 0, DATEFROMPARTS(2018, 12, 16), 720, 60, NULL
+	UNION ALL SELECT N'Samsung customer meeting', 0, 0, DATEFROMPARTS(2018, 12, 20), 615, 45, NULL  
+	UNION ALL SELECT N'Samsung team Daily SU', 0, 0, NULL, 585, 15, N'1,2,3,4,5'
 
-	UNION ALL SELECT N'Xaomi customer meeting', 8, DATEFROMPARTS(2018, 12, 10), N'11:00:00', 60, NULL
-	UNION ALL SELECT N'Xaomi tech talks', 8, DATEFROMPARTS(2018, 12, 10), N'13:30:00', 30, NULL
-	UNION ALL SELECT N'Xaomi employee introduction', 8, DATEFROMPARTS(2018, 12, 11), N'16:00:00', 15, NULL
-	UNION ALL SELECT N'Xaomi customer demo', 8, DATEFROMPARTS(2018, 12, 12), N'17:00:00', 30, NULL  
-	UNION ALL SELECT N'Xaomi team Daily SU', 8, NULL, N'09:45:00', 15, N'1,2,3,4,5'
+	UNION ALL SELECT N'Xaomi customer meeting', 8, 1, DATEFROMPARTS(2018, 12, 10), 660, 60, NULL
+	UNION ALL SELECT N'Xaomi tech talks', 8, 1, DATEFROMPARTS(2018, 12, 10), 810, 30, NULL
+	UNION ALL SELECT N'Xaomi employee introduction', 8, 1, DATEFROMPARTS(2018, 12, 11), 960, 15, NULL
+	UNION ALL SELECT N'Xaomi customer demo', 8, 1, DATEFROMPARTS(2018, 12, 12), 1020, 30, NULL  
+	UNION ALL SELECT N'Xaomi team Daily SU', 8, 1, NULL, 585, 15, N'1,2,3,4,5'
 
 	INSERT INTO Participants([MeetingId], [UserId])
 			  SELECT 0, 0

@@ -69,8 +69,9 @@ namespace UsSchedulerMeetings.Services
                 param.Add("@Name", dto.Name, DbType.Int32, ParameterDirection.Input);
                 param.Add("@Description", dto.Description, DbType.Int32, ParameterDirection.Input);
                 param.Add("@CreatedBy", dto.CreatedBy, DbType.Int32, ParameterDirection.Input);
+                param.Add("@CompanyId", dto.CompanyId, DbType.Int32, ParameterDirection.Input);
                 param.Add("@StartDate", dto.StartDate, DbType.Int32, ParameterDirection.Input);
-                param.Add("@StartTime", dto.StartTime, DbType.Int32, ParameterDirection.Input);
+                param.Add("@StartTimeMinutes", dto.StartTimeMinutes, DbType.Int32, ParameterDirection.Input);
                 param.Add("@DurationMinutes", dto.DurationMinutes, DbType.Int32, ParameterDirection.Input);
                 param.Add("@Days", dto.Days, DbType.Int32, ParameterDirection.Input);
 
@@ -89,7 +90,7 @@ namespace UsSchedulerMeetings.Services
                 param.Add("@Name", dto.Name, DbType.Int32, ParameterDirection.Input);
                 param.Add("@Description", dto.Description, DbType.Int32, ParameterDirection.Input);
                 param.Add("@StartDate", dto.StartDate, DbType.Int32, ParameterDirection.Input);
-                param.Add("@StartTime", dto.StartTime, DbType.Int32, ParameterDirection.Input);
+                param.Add("@StartTimeMinutes", dto.StartTimeMinutes, DbType.Int32, ParameterDirection.Input);
                 param.Add("@DurationMinutes", dto.DurationMinutes, DbType.Int32, ParameterDirection.Input);
                 param.Add("@Days", dto.Days, DbType.Int32, ParameterDirection.Input);
 

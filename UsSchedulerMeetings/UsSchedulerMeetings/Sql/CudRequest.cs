@@ -3,8 +3,8 @@
     public class CudRequest
     {
         public const string CreateMeeting = @"
-INSERT INTO Meetings ([Name], [Description], [CreatedBy], [StartDate], [StartTime], [DurationMinutes], [Days])
-VALUES (@Name, @Description, @CreatedBy, @StartDate, @StartTime, @DurationMinutes, @Days)
+INSERT INTO Meetings ([Name], [Description], [CreatedBy], [StartDate], [StartTimeMinutes], [DurationMinutes], [Days])
+VALUES (@Name, @Description, @CreatedBy, @StartDate, @StartTimeMinutes, @DurationMinutes, @Days)
 
 SELECT CAST(SCOPE_IDENTITY() as int)";
 
@@ -19,7 +19,7 @@ UPDATE Meeting SET
     Name = @Name,
     Description = @Desription,
     StartDate = @StartDate,
-    StartTime = @StartTime,
+    StartTimeMinutes = @StartTimeMinutes,
     DurationMinutes = @DurationMinutes,
     Days = @Days
 WHERE Id = @Id";
