@@ -47,9 +47,22 @@ namespace UsSchedulerMeetings.Services
             return result;
         }
 
+        public async Task<IEnumerable<Meeting>> GetCompanyMeetingsAsync(int companyId)
+        {
+            IEnumerable<Meeting> result;
+            using (var conn = new SqlConnection(_connectionStrings.MeetingsDb))
+            {
+                var param = new DynamicParameters();
+                param.Add("@CompanyId", companyId, DbType.Int32, ParameterDirection.Input);
+
+                result = await conn.QueryAsync<Meeting>(GetRequests.GetCompanyMeetings, param);
+            }
+
+            return result;
+        }
+
         public async Task<Meeting> CreateMeetingAsync(Meeting dto)
         {
-            int meetingId;
             using (var conn = new SqlConnection(_connectionStrings.MeetingsDb))
             {
                 var param = new DynamicParameters();

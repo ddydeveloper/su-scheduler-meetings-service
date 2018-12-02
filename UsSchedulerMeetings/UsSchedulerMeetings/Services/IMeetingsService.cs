@@ -10,6 +10,8 @@ namespace UsSchedulerMeetings.Services
 
         Task<IEnumerable<Meeting>> GetUserMeetingsAsync(int userId);
 
+        Task<IEnumerable<Meeting>> GetCompanyMeetingsAsync(int companyId);
+
         Task<Meeting> CreateMeetingAsync(Meeting dto);
 
         Task<Meeting> UpdateMeetingAsync(Meeting dto);
