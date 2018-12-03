@@ -5,7 +5,7 @@ variables:
   imageName: 'scheduler-meetings:$(Build.BuildId)'
 
 steps:
-- script: docker build -t $(dockerId).azurecr.io/$(imageName) .
+- script: docker build -f UsSchedulerMeetings/Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
   workingDirectory: src/
   displayName: 'Docker Build'
 
