@@ -12,7 +12,6 @@ variables:
 steps:
 - script: 
     docker login $(dockerId).azurecr.io -u $(dockerId) -p $(dockerPassword)
-  workingDirectory: src/
   displayName: 'docker login'
 
 - script: docker build -f Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
