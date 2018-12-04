@@ -11,7 +11,7 @@ namespace UsSchedulerMeetings.Dtos
 
         public string Description { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         public string Days { get; set; }
 

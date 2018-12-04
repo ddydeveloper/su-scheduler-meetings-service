@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Options;
@@ -44,6 +45,7 @@ namespace UsSchedulerMeetings.Services
                 result = await conn.QueryAsync<Meeting>(GetRequests.GetUserMeetings, param);
             }
 
+            result = result.Where(x => x.StartDate.HasValue);
             return result;
         }
 
