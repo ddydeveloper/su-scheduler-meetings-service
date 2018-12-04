@@ -43,7 +43,7 @@ namespace UsSchedulerMeetings.Services
                 param.Add("@UserId", userId, DbType.Int32, ParameterDirection.Input);
 
                 result = await conn.QueryAsync<Meeting>(GetRequests.GetUserMeetings, param);
-            }
+            } 
 
             result = result.Where(x => x.StartDate.HasValue);
             return result;
