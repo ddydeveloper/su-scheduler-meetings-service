@@ -45,7 +45,7 @@ namespace UsSchedulerMeetings.Services
                 result = await conn.QueryAsync<Meeting>(GetRequests.GetUserMeetings, param);
             } 
 
-            result = result.Where(x => x.StartDate.HasValue);
+            //result = result.Where(x => x.StartDate.HasValue);
             return result;
         }
 
