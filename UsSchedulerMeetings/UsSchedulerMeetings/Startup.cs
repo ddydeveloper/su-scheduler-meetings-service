@@ -18,6 +18,7 @@ namespace UsSchedulerMeetings
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Warning()
                 .WriteTo.File($"{AppContext.BaseDirectory}/Logs/log-.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.Seq(configuration.GetConnectionString("Seq"))
                 .CreateLogger();
 
             Configuration = configuration;
