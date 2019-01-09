@@ -12,7 +12,7 @@ WHERE P.UserId = @UserId";
         public const string GetCompanyMeetings = @"
 SELECT DISTINCT M.* FROM Meetings M
     INNER JOIN Participants P ON P.MeetingId = M.Id
-WHERE P.CompanyId = @CompanyId";
+WHERE M.CompanyId = @CompanyId";
 
         public const string GetParticipants = @"SELECT * FROM Participants WHERE MeetingId = @MeetingId";
     }
